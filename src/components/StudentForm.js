@@ -1,10 +1,9 @@
 import { useState } from "react"
 
-function StudentForm() {
+function StudentForm({ students, setStudents }) {
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
   const [age, setAge] = useState(0)
-  const [accepted, setAccepted] = useState("")
 
   function checkAndSetAge(e) {
     if (Number(e.target.value) < 100) {
@@ -16,9 +15,11 @@ function StudentForm() {
 
   function submitStudent() {
     if (age > 20 && city === "Tel Aviv") {
-      setAccepted("Accepted")
-    } else {
-      setAccepted("Sorry, not Accepted")
+      if (!students.includes(name)) {
+        const newStudents = students.slice()
+        newStudents.push(name)
+        setStudents(newStudents)
+      }
     }
   }
   return (
@@ -33,7 +34,6 @@ function StudentForm() {
       <input value={age} onChange={checkAndSetAge} />
       <br />
       <button onClick={submitStudent}>Sumbit</button>
-      <h2>{accepted}</h2>
     </div>
   )
 }
