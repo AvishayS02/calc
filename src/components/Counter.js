@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from "react"
 
 function Counter() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0)
 
   function add() {
-    setCounter(counter + 1);
+    setCounter(counter + 1)
   }
   function sub() {
-    setCounter(counter - 1);
+    setCounter(counter - 1)
   }
   return (
     <div className="counter">
@@ -15,7 +15,7 @@ function Counter() {
       <button onClick={add}>Add</button>
       <button onClick={sub}>Sub</button>
     </div>
-  );
+  )
 }
 
-export default Counter;
+export default Counter

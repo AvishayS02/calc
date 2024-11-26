@@ -1,18 +1,16 @@
-import "./App.css";
-import BasicCalc from "./components/BasicCalc";
-import Counter from "./components/Counter";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import "./App.css"
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import StudentForm from "./components/StudentForm"
 
 function App() {
   return (
     <>
       <Header />
-      <BasicCalc />
-      <Counter />
+      <StudentForm />
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
